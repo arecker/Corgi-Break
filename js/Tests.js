@@ -37,3 +37,56 @@ test("Imgur Album", function(){
 	var actual = CleanLink(link);
 	equal(actual, expected, "Returned good element");
 })
+
+/***** /* QUEUE.JS */ /*****/
+var LinkList = GetListOfLinks();
+module("Queue.js - GetListOfLinks")
+test("List isn't null", function(){
+	var actual = LinkList;
+	ok(actual != null, "GetListOfLinks did not return null");
+});
+
+test("List has at least one value", function(){
+	var actual = LinkList.length;
+	var limit = 0;
+	ok(actual > limit, "List has at least one");
+});
+
+test("List Contains Links", function(){
+	var looksOk = true;
+	for (var i=0 ; i < LinkList.length ; i++)
+		if (LinkList[i].indexOf("http") == -1)
+			looksOk = false;
+	ok(looksOk == true, "Link list contains valid links");
+});
+
+test("Get Queue isn't null", function(){
+	var actual = GetQueue();
+	ok(actual != null, "GetQueue did not return null");
+});
+
+/***** /* EVENTS.JS */ /*****/
+module("Events.js - Next/Prev");
+test("Next advances index", function(){
+	SetIndex(3);
+	MoveNext();
+	var actual = GetIndex();
+	var expected = 4;
+	equal(actual, expected, "Next advanced index");
+});
+
+test("Prev backed up index", function(){
+	SetIndex(9);
+	MovePrev();
+	var actual = GetIndex();
+	var expected = 8;
+	equal(actual, expected, "Prev backed up index");
+});
+
+test("Next stops at limit", function(){
+	var expected = SetIndex(LinkList.length -1);
+	expected = 24;
+	MoveNext();
+	var actual = GetIndex();
+	equal(actual, expected, "Next stopped at end of queue");
+});

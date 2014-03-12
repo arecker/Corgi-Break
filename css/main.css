@@ -29,7 +29,7 @@ img {
   min-height: 198px;
 }
 
-#picture[src="/icons/spinner.gif"]{
+#picture[src="icons/spinner.gif"]{
   width: 30px;
   height: 30px;
   position: fixed;
