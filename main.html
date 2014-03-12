@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<head>
+	<!-- CSS Libs -->
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome.min.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="mainContainer" class="container">
+		<!-- Exit Button -->
+		<i id="exit" title="Break Time over?" class="fa fa-times-circle-o"></i>
+		<!-- Buttom Column -->
+		<div class="btn-container">
+			<ul class="btns">
+				<li><button id="nextButton" type="button" class="btn changer"><span class="glyphicon glyphicon-chevron-right"></span></button></li>
+				<li><button id="prevButton" type="button" class="btn changer"><span class="glyphicon glyphicon-chevron-left"></span></button></li>
+				<li><button id="refreshButton" type="button" class="btn btn-info"><i class="fa fa-refresh"></i></button></li>
+				<li><button id="settingsButton" type="button" class="btn btn-default"><span class="glyphicon glyphicon-cog"></span></li>
+			</ul>
+		</div>
+		<!-- Image / Item container -->
+		<div id="imageContainer">
+			<img id="picture" src="/icons/spinner.gif">
+		</div>
+
+	</div>
+
+	<div id="settingsContainer" class="container" style="display: none">
+		<div class="btn-container">
+			<ul class="btns">
+				<li><button id="backButton" type="button" class="btn-primary"><span class="glyphicon glyphicon-arrow-up"></span></button></li>
+			</ul>
+		</div>
+		
+		<div id="miscSettingsContainer" class="container pull-left">
+			<p class="text-left lead">Preferences</p>
+			<div class="checkbox">
+    			<label>
+      				<input id="option1" type="checkbox" value="savePosition"> Option Here
+    			</label>
+  			</div>
+  			<div class="checkbox pull-left">
+    			<label>
+      				<input id="option2" type="checkbox" value="shuffle"> Another Here
+    			</label>
+  			</div>
+  			<hr><br>
+  			<p class="text-left lead" style="margin-bottom: 0px;">About Here</p>
+		</div>
+	</div>
+</body>
+
+<footer>
+	<!--Libs-->
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<!--App Scripts-->
+	<script type="text/javascript" src="js/Helpers.js"></script>
+	<script type="text/javascript" src="js/Queue.js"></script>
+	<script type="text/javascript" src="js/Events.js"></script>
+</footer>

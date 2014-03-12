@@ -1,0 +1,87 @@
+body {
+  width: 415px;
+  min-height: 150px;
+  text-align: center;
+  display: block;
+}
+
+.container {
+  margin: 5px;
+  min-width: 100px;
+}
+
+img {
+    width: 300px;
+    vertical-align: right;
+    display: block;
+    margin: auto;
+}
+
+#mainContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#imageContainer { float: right;}
+
+#picture {
+  float: left;
+  min-height: 198px;
+}
+
+#picture[src="/icons/spinner.gif"]{
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  top: 90px;
+  left: 150px;
+  min-height: 0px;
+}
+
+#settingsContainer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#settingsContainer hr {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#settingsContainer p {
+  margin-bottom: 0px;
+}
+
+.btn-container {
+    float: right;
+}
+
+.btns {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.btns li {
+    margin: 5px 0;
+    padding-left: 0;
+}
+
+.btns li:first-child {
+    margin: 0 0 5px 0;
+}
+
+.btns li:last-chid {
+    margin: 5px 0 0 0;
+}
+
+#exit {
+    position: fixed;
+    left: 5px;
+    top: 2px;
+    color: black;
+    cursor: pointer;
+}
+
+#backButton {
+  padding: 10px 18px;
+}
