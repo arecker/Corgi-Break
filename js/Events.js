@@ -2,20 +2,24 @@
 WaitForIt();
 var index = 0;
 var queue = GetQueue();
+UpdateImage();
 
 // Exit Button
 $("#exit").click(function(){ window.close(); });
 
 // Refresh Button
+if ( $("#refreshButton").find('i').hasClass('fa-spin') ) return false;
 $("#refreshButton").click(function(){
+	SpinButton();
 	WaitForIt();
 	index = 0;
 	queue = GetQueue();
 	UpdateImage();
+	StopSpinButton();
 });
 
 // Next Button
-$("#nextButton").click(MoveNext());
+$("#nextButton").click(function() { MoveNext(); });
 function MoveNext()
 {
 	if (index == queue.length -1) return false;
@@ -25,7 +29,7 @@ function MoveNext()
 }
 
 // Prev Button
-$("#prevButton").click(MovePrev());
+$("#prevButton").click(function(){ MovePrev(); });
 function MovePrev()
 {
 	if (index == 0) return false;
@@ -52,6 +56,18 @@ function UpdateImage()
 	// Swap out picture
 	var newElement = queue[index];
 	$(newElement).replaceAll('#picture');
+}
+
+
+// The Refresh button spins after you click it
+function SpinButton()
+{
+	$("#refreshButton").find('i').addClass('fa-spin');
+}
+
+function StopSpinButton()
+{
+	$("#refreshButton").find('i').removeClass('fa-spin');
 }
 
 // Accessors for testing

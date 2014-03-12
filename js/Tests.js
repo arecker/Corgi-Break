@@ -33,7 +33,7 @@ test("YouTube Link", function(){
 
 test("Imgur Album", function(){
 	var link = "http://imgur.com/a/yQiWb#0";
-	var expected = '<iframe id="picture" class="imgur-album" width="300" height="300" frameborder="0" src="http://imgur.com/a/yQiWb/embed"></iframe>';
+	var expected = '<iframe id="picture" class="imgur-album" width="300" height="300" frameborder="0" src="http://imgur.com/a/yQiWb//embed"></iframe>';
 	var actual = CleanLink(link);
 	equal(actual, expected, "Returned good element");
 })
@@ -89,4 +89,21 @@ test("Next stops at limit", function(){
 	MoveNext();
 	var actual = GetIndex();
 	equal(actual, expected, "Next stopped at end of queue");
+});
+
+/***** /* HARHCODES.JS */ /*****/
+module("HardCodes.js - GetRandomFromHardCodes")
+test("100 != Null", function(){
+	var test = true;
+	for (var i=0 ; i<100 ; i++)
+		if (GetRandomFromHardCodes() == null)
+			test = false;
+	ok(test, "100 Randoms were legit");
+});
+
+test("Passing in dumb link gets a random", function(){
+	var link = "not even remotely a link (I hope not at least)";
+	var actual = CleanLink(link);
+	var HardCodes = GetHardCodes();
+	ok($.inArray(actual, HardCodes) == -1, "Cleaning a dumb link returned a random");
 });

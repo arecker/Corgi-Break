@@ -31,7 +31,7 @@ function CleanLink(link)
 			key = key.substring(0, key.length - 2) + '/';
 		}
 
-		var element = '<iframe id="picture" class="imgur-album" width="300" height="300" frameborder="0" src="' + key + 'embed"></iframe>'
+		var element = '<iframe id="picture" class="imgur-album" width="300" height="300" frameborder="0" src="' + key + '/embed"></iframe>'
 		return element;
 	}
 
@@ -57,5 +57,9 @@ function CleanLink(link)
 		var element = '<img id="picture" src="' + link + '"/>';
 		return element ;
 	}
+
+	// If the link was bad, just get a hard-coded one
+	// A very subtle recursive loop, too.  Sexy, right?
+	return GetRandomFromHardCodes();
 
 }
