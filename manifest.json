@@ -1,9 +1,8 @@
 {
   "name": "Corgi-Time",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "manifest_version": 2,
   "description": "It's time for a Corgi Break.",
-  //"homepage_url": "http://extensionizr.com",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
