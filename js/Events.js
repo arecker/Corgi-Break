@@ -1,6 +1,11 @@
 // Events.js //
 WaitForIt();
 var index = 0;
+if (GetRememberIndexOption())
+{
+	index = GetSavedIndex();
+}
+
 var queue = GetQueue();
 UpdateImage();
 
@@ -106,6 +111,12 @@ function UpdateImage()
 	// Swap out picture
 	var newElement = queue[index];
 	$(newElement).replaceAll('#picture');
+
+	// Save Index if needed
+	if (GetRememberIndexOption())
+	{
+		SaveIndex(index);
+	}
 }
 
 

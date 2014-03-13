@@ -120,6 +120,7 @@ test("Can save and get shuffle", function(){
 	localStorage.removeItem("shuffle");
 	ok(localStorage["shuffle"] == null, "Cleared cache");
 });
+module("Data.js - Get/Save remember index");
 test("Can save and get remember index", function(){
 	var expected = true;
 	SaveRememberIndexOption(expected);
@@ -129,4 +130,15 @@ test("Can save and get remember index", function(){
 	// Clear cache
 	localStorage.removeItem("remember");
 	ok(localStorage["remember"] == null, "Cleared cache");
+});
+module("Data.js - Get/Save last index");
+test("Can save and get last index", function(){
+	var expected = 9;
+	SaveIndex(expected);
+	ok(localStorage["index"] != null, "Saved a non null index");
+	var actual = GetSavedIndex();
+	equal(actual, expected, "Got index back");
+	// Clear
+	localStorage.removeItem("index");
+	ok(localStorage["index"] == null, "Cleared cache");
 });

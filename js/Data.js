@@ -24,3 +24,16 @@ function GetRememberIndexOption()
 	if (option == null) return false;
 	return option === "true";
 }
+
+function SaveIndex(ind)
+{
+	localStorage.setItem("index", null);
+	localStorage.setItem("index", ind);
+}
+
+function GetSavedIndex()
+{
+	var option = localStorage.getItem("index");
+	if (option == null) return 0;
+	return parseInt(option);
+}
