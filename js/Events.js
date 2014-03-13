@@ -38,6 +38,15 @@ function MovePrev()
 	UpdateImage();
 }
 
+// Settings Button
+$("#settingsButton").click(function(){ ToggleSettingsPage(); });
+$("#backButton").click(function(){ ToggleSettingsPage(); });
+function ToggleSettingsPage()
+{
+	$("#mainContainer").slideToggle();
+	$("#settingsContainer").slideToggle();
+}
+
 function UpdateImage()
 {
 	// Check Prev and Next buttons with Index

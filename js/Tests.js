@@ -107,3 +107,5 @@ test("Passing in dumb link gets a random", function(){
 	var HardCodes = GetHardCodes();
 	ok($.inArray(actual, HardCodes) == -1, "Cleaning a dumb link returned a random");
 });
+
+/***** /* DATA.JS */ /*****/
