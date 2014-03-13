@@ -19,6 +19,11 @@ function GetListOfLinks()
 		}
 	});
 
+	if (GetShuffleOption())
+	{
+		return shuffle(listOfLinks);
+	}
+
 	return listOfLinks;
 }
 

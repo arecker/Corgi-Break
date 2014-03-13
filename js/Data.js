@@ -10,7 +10,7 @@ function GetShuffleOption()
 {
 	var option = localStorage.getItem("shuffle");
 	if (option == null) return false;
-	return Boolean(option);
+	return option === "true";
 }
 
 function SaveRememberIndexOption(bool)
@@ -22,5 +22,5 @@ function GetRememberIndexOption()
 {
 	var option = localStorage.getItem("remember");
 	if (option == null) return false;
-	return Boolean(option);
+	return option === "true";
 }
