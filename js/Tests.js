@@ -109,3 +109,24 @@ test("Passing in dumb link gets a random", function(){
 });
 
 /***** /* DATA.JS */ /*****/
+module("Data.js - Get/Save Shuffle")
+test("Can save and get shuffle", function(){
+	var expected = true;
+	SaveShuffleOption(expected);
+	ok(localStorage["shuffle"] != null, "Successfully wrote non null to localStorage");
+	var actual = GetShuffleOption();
+	equal(actual, expected, "Retrieved saved value from localStorage");
+	// Clear cache
+	localStorage.removeItem("shuffle");
+	ok(localStorage["shuffle"] == null, "Cleared cache");
+});
+test("Can save and get remember index", function(){
+	var expected = true;
+	SaveRememberIndexOption(expected);
+	ok(localStorage["remember"] != null, "Successfully wrote non null to localStorage");
+	var actual = GetRememberIndexOption();
+	equal(actual, expected, "Retrieved saved value from localStorage");
+	// Clear cache
+	localStorage.removeItem("remember");
+	ok(localStorage["remember"] == null, "Cleared cache");
+});

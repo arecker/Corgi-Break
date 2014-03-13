@@ -47,6 +47,47 @@ function ToggleSettingsPage()
 	$("#settingsContainer").slideToggle();
 }
 
+// Save last position
+$("#saveLast").change(function(){
+	if($(this).is(":checked")) 
+	{
+    	SaveRememberIndexOption(true);
+    }
+
+    else
+    {
+    	SaveRememberIndexOption(false);
+    }
+});
+
+// Shuffle option
+$("#shuffle").change(function(){
+	if($(this).is(":checked")) 
+	{
+    	SaveShuffleOption(true);
+    }
+
+    else
+    {
+    	SaveShuffleOption(false);
+    }
+});
+
+// Donate button
+$("#donate").click(function(){
+	$("#payPalButton").click();
+});
+
+// Blog Link
+$("#blog").click(function(){
+	window.open("http://alex.reckerfamily.com");
+});
+
+// GitHub Link
+$("#github").click(function(){
+	window.open("http://github.com/arecker/Corgi-Break")
+});
+
 function UpdateImage()
 {
 	// Check Prev and Next buttons with Index

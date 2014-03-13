@@ -37,16 +37,27 @@
 			<p class="text-left lead">Preferences</p>
 			<div class="checkbox">
     			<label>
-      				<input id="option1" type="checkbox" value="savePosition"> Option Here
+      				<input id="saveLast" type="checkbox" value="savePosition"> Always save last position
     			</label>
   			</div>
   			<div class="checkbox pull-left">
     			<label>
-      				<input id="option2" type="checkbox" value="shuffle"> Another Here
+      				<input id="shuffle" type="checkbox" value="shuffle"> Shuffle on refresh
     			</label>
   			</div>
   			<hr><br>
-  			<p class="text-left lead" style="margin-bottom: 0px;">About Here</p>
+  			<hr><br>
+  			<ul id="credits">
+  				<li><i class="fa fa-fw fa-pencil"></i> <a id="blog" href="#">Read my blog</a></li>
+  				<li><i class="fa fa-fw fa-github"></i> <a id="github" href="#">Contribute code </a></li>
+  				<li><i class="fa fa-fw fa-beer"></i> <a id="donate" href="#">Buy me a beer</a> <form id="payPal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+">
+<input id="payPalButton" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form></li>
+  			</ul>
 		</div>
 	</div>
 </body>
@@ -59,5 +70,6 @@
 	<script type="text/javascript" src="js/Helpers.js"></script>
 	<script type="text/javascript" src="js/HardCodes.js"></script>
 	<script type="text/javascript" src="js/Queue.js"></script>
+	<script type="text/javascript" src="js/Repopulate.js"></script>
 	<script type="text/javascript" src="js/Events.js"></script>
 </footer>
