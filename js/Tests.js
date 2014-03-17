@@ -38,6 +38,13 @@ test("Imgur Album", function(){
 	equal(actual, expected, "Returned good element");
 })
 
+test("Unknown Site", function(){
+	var link = "http://invisiblebread.com/images/wendellkitchenloop.gif";
+	var expected = '<img id="picture" src="http://invisiblebread.com/images/wendellkitchenloop.gif"/>';
+	var actual = CleanLink(link);
+	equal(actual, expected, "Returned splendid element");
+})
+
 /***** /* QUEUE.JS */ /*****/
 var LinkList = GetListOfLinks();
 module("Queue.js - GetListOfLinks")
