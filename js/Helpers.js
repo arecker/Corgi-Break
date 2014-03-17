@@ -46,7 +46,7 @@ function CleanLink(link) {
     }
 
     // Unknown site, but might be a valid IMG resource
-    if (link.indexOf('.jpg') !== -1 || link.indexOf('.png') !== -1 || link.indexOf('.jpeg') !== -1) {
+    if (link.indexOf('.jpg') !== -1 || link.indexOf('.png') !== -1 || link.indexOf('.jpeg') !== -1  || link.indexOf('.gif') !== -1) {
         var element = '<img id="picture" src="' + link + '"/>';
         return element;
     }
