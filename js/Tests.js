@@ -59,6 +59,14 @@ test("Gallery Imgur Links", function(){
 	equal(actual, expected, "Handled a gallery link right");
 })
 
+module("Helpers.js - GetIMGElement");
+test("Clean src passed in", function(){
+	var src = "http://i.imgur.com/oI9n3dx.jpg";
+	var expected = '<img id="picture" src="http://i.imgur.com/oI9n3dx.jpg"/>';
+	var actual = GetIMGElement(src);
+	equal(actual, expected, "Got proper IMG Element");
+})
+
 /***** /* QUEUE.JS */ /*****/
 var LinkList = GetListOfLinks();
 module("Queue.js - GetListOfLinks")
