@@ -27,6 +27,7 @@ img {
 #picture {
   float: left;
   min-height: 198px;
+  cursor: pointer;
 }
 
 #picture[src="icons/spinner.gif"]{

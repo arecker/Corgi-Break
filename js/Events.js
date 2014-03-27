@@ -27,6 +27,14 @@ $("#refreshButton").click(function(){
 	});
 });
 
+// Clickable IMG's
+// Can't just use hrefs - have to use this method
+$("#imageContainer").click(function()
+{
+	var link = $( this ).find("img").prop('src');
+	window.open(link);
+});
+
 // Next Button
 $("#nextButton").click(function() { MoveNext(); });
 function MoveNext()
