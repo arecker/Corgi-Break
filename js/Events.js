@@ -15,12 +15,16 @@ $("#exit").click(function(){ window.close(); });
 // Refresh Button
 if ( $("#refreshButton").find('i').hasClass('fa-spin') ) return false;
 $("#refreshButton").click(function(){
-	//SpinButton();
+	SpinButton();
 	WaitForIt();
 	index = 0;
-	queue = GetQueue();
-	UpdateImage();
-	StopSpinButton();
+
+	$.when(function(){
+		queue = GetQueue();
+	}).done(function(){
+		UpdateImage();
+		StopSpinButton();
+	});
 });
 
 // Next Button

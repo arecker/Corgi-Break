@@ -13,16 +13,16 @@ function CleanLink(link) {
 
     // Clean imgur link
     if (link.indexOf('http://i.imgur.com') !== -1) {
-        var element = '<img id="picture" src="' + link + '"/>';
-        return element;
+        return GetIMGElement(link);
     }
 
     // Imgur Gallery link
     if (link.indexOf('imgur.com/gallery') !== -1) {
         var strippedLink = link.replace('gallery/', '');
+        // If trailing "/"
+        if (strippedLink.slice(-1) == '/') strippedLink = strippedLink.substring(0, strippedLink.length - 1);
         var strippedLinkAgain = strippedLink.replace('imgur.com', 'i.imgur.com') + '.jpg';
-        var element = '<img id="picture" src="' + strippedLinkAgain + '"/>';
-        return element;
+        return GetIMGElement(strippedLinkAgain);
     }
 
     // Imgur Album
@@ -42,8 +42,7 @@ function CleanLink(link) {
     // Regular Imgur link
     if (link.indexOf('http://imgur.com') !== -1 && link.indexOf('imgur.com/a/') == -1) {
         var fixed_link = link.substring(0, 7) + 'i.' + link.substring(7) + '.png';
-        var element = '<img id="picture" src="' + fixed_link + '"/>';
-        return element;
+        return GetIMGElement(fixed_link);
     }
 
     // YouTube link
@@ -55,14 +54,18 @@ function CleanLink(link) {
 
     // Unknown site, but might be a valid IMG resource
     if (link.indexOf('.jpg') !== -1 || link.indexOf('.png') !== -1 || link.indexOf('.jpeg') !== -1  || link.indexOf('.gif') !== -1) {
-        var element = '<img id="picture" src="' + link + '"/>';
-        return element;
+        return GetIMGElement(link);
     }
 
     // If the link was bad, just get a hard-coded one
     console.log("Fall through: " + link);
     return GetRandomFromHardCodes();
 
+}
+
+function GetIMGElement(src)
+{
+    return '<img id="picture" src="' + src + '"/>';
 }
 
 //+ Jonas Raoni Soares Silva

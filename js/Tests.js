@@ -53,7 +53,7 @@ test("Found bug", function(){
 })
 
 test("Gallery Imgur Links", function(){
-	var link = "http://imgur.com/gallery/CQglbo4";
+	var link = "http://imgur.com/gallery/CQglbo4/";
 	var expected = '<img id="picture" src="http://i.imgur.com/CQglbo4.jpg"/>';
 	var actual = CleanLink(link);
 	equal(actual, expected, "Handled a gallery link right");
