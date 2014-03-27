@@ -15,7 +15,9 @@ function GetListOfLinks()
 		},
 
 		error: function() {
-			// TODO: Handle a failure to handshake reddit
+			// Reddit is down
+			alert('Sorry, but Reddit is down right now.');
+			window.close();
 		}
 	});
 
