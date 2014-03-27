@@ -17,6 +17,14 @@ function CleanLink(link) {
         return element;
     }
 
+    // Imgur Gallery link
+    if (link.indexOf('imgur.com/gallery') !== -1) {
+        var strippedLink = link.replace('gallery/', '');
+        var strippedLinkAgain = strippedLink.replace('imgur.com', 'i.imgur.com') + '.jpg';
+        var element = '<img id="picture" src="' + strippedLinkAgain + '"/>';
+        return element;
+    }
+
     // Imgur Album
     if (link.indexOf('imgur.com/a/') !== -1) {
         // This gets messy.

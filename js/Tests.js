@@ -45,6 +45,20 @@ test("Unknown Site", function(){
 	equal(actual, expected, "Returned splendid element");
 })
 
+test("Found bug", function(){
+	var link = "http://i.imgur.com/oI9n3dx.jpg"
+	var expected = '<img id="picture" src="http://i.imgur.com/oI9n3dx.jpg"/>';
+	var actual = CleanLink(link);
+	equal(actual, expected, "Bug no longer an issue");
+})
+
+test("Gallery Imgur Links", function(){
+	var link = "http://imgur.com/gallery/CQglbo4";
+	var expected = '<img id="picture" src="http://i.imgur.com/CQglbo4.jpg"/>';
+	var actual = CleanLink(link);
+	equal(actual, expected, "Handled a gallery link right");
+})
+
 /***** /* QUEUE.JS */ /*****/
 var LinkList = GetListOfLinks();
 module("Queue.js - GetListOfLinks")
