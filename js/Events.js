@@ -1,13 +1,11 @@
 // Events.js //
-WaitForIt();
 var index = 0;
 if (GetRememberIndexOption())
 {
 	index = GetSavedIndex();
 }
 
-var queue = GetQueue();
-UpdateImage();
+var queue = []
 
 // Exit Button
 $("#exit").click(function(){ window.close(); });
@@ -154,3 +152,10 @@ function GetIndex()
 {
 	return index;
 }
+
+
+// Document Ready
+$( document ).ready(function(){
+	queue = GetQueue();
+	UpdateImage();
+});
