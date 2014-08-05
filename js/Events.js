@@ -11,7 +11,10 @@ var queue = []
 $("#exit").click(function(){ window.close(); });
 
 // Refresh Button
-if ( $("#refreshButton").find('i').hasClass('fa-spin') ) return false;
+/*if ( $("#refreshButton").find('i').hasClass('fa-spin') ) {
+	return false;
+}*/
+
 $("#refreshButton").click(function(){
 	SpinButton();
 	WaitForIt();
